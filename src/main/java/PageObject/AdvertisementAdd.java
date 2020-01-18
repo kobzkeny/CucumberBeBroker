@@ -3,10 +3,16 @@ package PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class AdvertisementAdd {
+    @FindBy(xpath ="//a[@class='btn btn-light2']")
+    private static WebElement loginButton;
+
     public static void logIn(WebDriver driver) throws InterruptedException {
-        driver.findElement(By.xpath("//a[@class='btn btn-light2']")).click();
+        PageFactory.initElements(driver,AdvertisementAdd.class);
+       loginButton.click();
         Thread.sleep(500);
         driver.findElement(By.xpath("//input[@id='email']")).sendKeys("michalkobylko@gmail.com");
         driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Michal10");
