@@ -9,14 +9,20 @@ import org.openqa.selenium.support.PageFactory;
 public class AdvertisementAdd {
     @FindBy(xpath ="//a[@class='btn btn-light2']")
     private static WebElement loginButton;
+    @FindBy(id = "email")
+    private static WebElement mailInput;
+    @FindBy(xpath ="//input[@id='password']")
+    private static WebElement passwordInput;
+    @FindBy(xpath ="//a[@class='btn btn-xl btn-fill act-send']")
+    private static WebElement continueButton;
 
     public static void logIn(WebDriver driver) throws InterruptedException {
         PageFactory.initElements(driver,AdvertisementAdd.class);
        loginButton.click();
         Thread.sleep(500);
-        driver.findElement(By.xpath("//input[@id='email']")).sendKeys("michalkobylko@gmail.com");
-        driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Michal10");
-        driver.findElement(By.xpath("//a[@class='btn btn-xl btn-fill act-send']")).click();
+        mailInput.sendKeys("michalkobylko@gmail.com");
+        passwordInput.sendKeys("Michal10");
+        continueButton.click();
     }
 
     public static void addFlat(WebDriver driver) throws InterruptedException {

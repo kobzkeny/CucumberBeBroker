@@ -7,6 +7,5 @@ Feature: Uzytkownik sprawdza oferty
     And Uzytkownik wybiera miasto Wroclaw
     And Uzytkownik akceptuje wprowadzone kryteria przyciskiem szukaj
     And Uzytkownik wybiera dowolna oferte z listy poprzez przycisk zobacz
-
     When Uzytkownik uzupelnia formularz kontaktowy i wysyla zapytanie do  klienta
     Then Wiadomosc do klienta zostala wyslana poprzez formularz
